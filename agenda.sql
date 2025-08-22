@@ -59,7 +59,7 @@ CREATE TABLE `contato` (
   `cidade` varchar(45) NOT NULL,
   `uf` varchar(2) NOT NULL,
   PRIMARY KEY (`idcontato`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,6 +68,7 @@ CREATE TABLE `contato` (
 
 LOCK TABLES `contato` WRITE;
 /*!40000 ALTER TABLE `contato` DISABLE KEYS */;
+INSERT INTO `contato` VALUES (1,'Suellen Martinelli','Rua Ten. Alcindo Guanabara','219','E17','18214236','Paineiras','Itapetininga','SP'),(2,'Carlos Henrique','Avenida das Flores','150',NULL,'01001000','Centro','São Paulo','SP'),(3,'Ana Paula Silva','Rua das Palmeiras','48','Bloco B','30140071','Savassi','Belo Horizonte','MG'),(4,'Ricardo Oliveira','Rua Barão do Rio Branco','1020',NULL,'80010000','Centro Cívico','Curitiba','PR'),(5,'Juliana Mendes','Rua Almirante Tamandaré','90','Apto 302','69050000','Adrianópolis','Manaus','AM');
 /*!40000 ALTER TABLE `contato` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,7 +114,7 @@ CREATE TABLE `telefone` (
   PRIMARY KEY (`idtelefone`),
   KEY `idContato` (`idContato`),
   CONSTRAINT `telefone_ibfk_1` FOREIGN KEY (`idContato`) REFERENCES `contato` (`idcontato`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,6 +123,7 @@ CREATE TABLE `telefone` (
 
 LOCK TABLES `telefone` WRITE;
 /*!40000 ALTER TABLE `telefone` DISABLE KEYS */;
+INSERT INTO `telefone` VALUES (1,'15','998075509','celular',2),(2,'11','985621234','residencial',1),(3,'21','998877665','comercial',4),(4,'31','987654321','celular',1),(5,'47','996633221','residencial',5);
 /*!40000 ALTER TABLE `telefone` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -134,4 +136,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-08-15 16:39:17
+-- Dump completed on 2025-08-22 16:28:53
